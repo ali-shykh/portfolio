@@ -1,2 +1,2 @@
-# portfolio
-WEB DEVELOPER PORTFOLIO
+# PORTFOLIO
+Web Developer Portfolio

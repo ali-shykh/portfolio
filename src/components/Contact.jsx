@@ -87,7 +87,7 @@ const Contact = () => {
   };
 
   return (
-    <section ref={ref} className="w-full h-auto bg-[#102327]">
+    <section ref={ref} className="border-b-2 border-[#f2004a]">
       <div
         className={`py-3 transform transition-all ${
           isIntersecting ? "animate-slide-in-left" : ""
@@ -98,11 +98,11 @@ const Contact = () => {
           Let's Connect
         </h1>
       </div>
-      <div className={`${styles.paddingX}`}>
+      <div className={`${styles.paddingX} ${styles.paddingY} `}>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className={`flex flex-col gap-8 mx-10 ${
+          className={`flex flex-col gap-6 ${
             isIntersecting ? "animate-slide-in-right" : ""
           }`}
         >
@@ -113,7 +113,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your good name?"
-              className="bg-[#efefef] py-4 px-6 placeholder:text-secondary rounded-lg font-medium"
+              className="bg-transparent text-[#efefef] border-2 border-[#f2004a] py-4 px-6 placeholder:text-[#efefef] rounded-lg font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -123,7 +123,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email address?"
-              className="bg-[#efefef] py-4 px-6 placeholder:text-secondary rounded-lg font-medium"
+              className="bg-transparent text-[#efefef] border-2 border-[#f2004a] py-4 px-6 placeholder:text-[#efefef] rounded-lg font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -133,13 +133,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What you want to say?"
-              className="bg-[#efefef] py-4 px-6 placeholder:text-secondary rounded-lg font-medium"
+              className="bg-transparent text-[#efefef] border-2 border-[#f2004a] py-4 px-6 placeholder:text-[#efefef] rounded-lg font-medium"
             />
           </label>
 
           <button
             type="submit"
-            className="border-[2px] mb-5 py-3 px-8 w-full sm:w-[10%] rounded-xl outline-none text-white hover:bg-[#efefef] hover:text-[#102327] font-bold shadow-md shadow-primary"
+            className="border-2 border-[#f2004a] mb-5 py-3 px-8 w-full sm:w-[10%] rounded-xl outline-none text-[#efefef] hover:text-[#f2004a] font-bold shadow-md shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
           </button>

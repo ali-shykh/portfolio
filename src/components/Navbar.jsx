@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import Logo from "../assets/logo (2).png";
+import Logo from "../assets/logo.png";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 import { navLinks } from "../constants";
 import { animateScroll as scroll } from "react-scroll"; // Import animateScroll from react-scroll
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -13,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} fixed w-full flex items-center py-5 top-0 left-0 z-20 bg-[#efefef] bg-opacity-90`}
+      className={`${styles.paddingX} fixed w-full flex items-center py-5 top-0 left-0 z-20 bg-[#1f1f1f] bg-opacity-90`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -25,7 +26,7 @@ const Navbar = () => {
           }}
         >
           <img src={Logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-secondary text-[20px] font-bold cursor-pointer">
+          <p className="text-[#f2004a] text-[20px] font-bold cursor-pointer">
             Ali Rehman
           </p>
         </Link>
@@ -34,9 +35,7 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.title ? "text-[#102327]" : "text-gray-500"
-              } hover:text-[#102327] text-[20px] font-medium cursor-pointer`}
+              className={`text-[#f2004a] text-[20px] font-medium cursor-pointer`}
               onClick={() => {
                 setActive(nav.title);
                 const element = document.getElementById(nav.id);
@@ -56,25 +55,22 @@ const Navbar = () => {
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[25px] h-[25px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-          />
+          {toggle ? (
+            <X color="#f2004a" onClick={() => setToggle(!toggle)} />
+          ) : (
+            <Menu color="#f2004a" onClick={() => setToggle(!toggle)} />
+          )}
 
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 bg-[#102327] absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 bg-[#f2004a] absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex flex-col gap-4 justify-end items-start">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
-                  className={`${
-                    active === nav.title ? "text-white" : "text-gray-500"
-                  } font-poppins text-[16px] font-medium cursor-pointer`}
+                  className={`text-[#1f1f1f] font-poppins text-[16px] font-medium cursor-pointer`}
                   onClick={() => {
                     setActive(nav.title);
                     setToggle(!toggle);

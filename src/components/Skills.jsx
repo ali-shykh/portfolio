@@ -28,29 +28,30 @@ const Skills = () => {
   }, []);
 
   return (
-    <section ref={ref} className="w-full h-auto lg:h-screen bg-[#102327]">
+    <section
+      ref={ref}
+      className="w-full h-auto lg:h-screen border-b-2 border-[#f2004a]"
+    >
       <div
         className={`transform transition-all py-3 ${
           isIntersecting ? "animate-slide-in-left" : ""
         }`}
         id="skills"
       >
-        <h1 className={`${styles.heroHeadText} text-[#efefef] text-center`}>
-          Skills
-        </h1>
+        <h1 className={`${styles.heroHeadText} text-center`}>Skills</h1>
       </div>
       <div
-        className={`${styles.paddingX} ${styles.paddingY} flex flex-row flex-wrap justify-center gap-10`}
+        className={`${styles.paddingX} ${styles.paddingY} grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10`}
       >
         {technologies.map((tech, index) => (
           <div
-            className={`w-28 h-28 flex flex-col justify-center items-center ${
+            className={`w-24 h-24 flex flex-col mb-6 ${
               isIntersecting ? "animate-slide-in-right" : ""
             }`}
             key={index}
           >
-            <p className="text-center font-bold text-gray-500">{tech.name}</p>
-            <img src={tech.icon} alt={tech.name} className="" />
+            <p className="text-center font-bold text-[#efefef]">{tech.name}</p>
+            <img src={tech.icon} alt={tech.name} />
           </div>
         ))}
       </div>

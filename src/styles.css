@@ -50,7 +50,8 @@
   --blue: #0057e7;
   --red: #d62d20;
   --yellow: #ffa700;
-  --white: #eee;
+  --white: #efefef;
+  --body: #1f1f1f;
 }
 
 /* loader styles */
@@ -126,7 +127,7 @@
 
 /* demo-specific styles */
 body {
-  background-color: var(--white);
+  background-color: var(--body);
 }
 
 .showbox {

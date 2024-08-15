@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import Footer from "./components/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,12 +27,13 @@ function App() {
         <Loader />
       ) : (
         <BrowserRouter>
-          <div className="relative z-0 bg-[#EFEFEF]">
+          <div className="bg-[#1f1f1f]">
             <Navbar />
             <Hero />
             <Skills />
             <Experience />
             <Contact />
+            <Footer />
           </div>
         </BrowserRouter>
       )}
